@@ -4,4 +4,4 @@ Unlimited guess, good for pre-school kids
 
 #Orz
 
-![alt text](/images/example.png)
+![alt text](/img/example.png)
