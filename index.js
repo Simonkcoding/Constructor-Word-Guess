@@ -6,15 +6,16 @@
 
 var inquirer = require("inquirer");
 var Word = require("./word.js");
-var wordList = ["monday", "tuesday", "wednesday"];
+var wordList = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
 var chosenWord = wordList[Math.floor(Math.random() * wordList.length)];
-console.log(chosenWord);
+// console.log(chosenWord);
 var quizArray = new Word(chosenWord);
 quizArray.arraytize();
 quizArray.returnCurrentString();
 var isGamefinish = false;
-
 var correctCounter = 0;
+
+console.log("Guess a name of a day of week!")
 function gameStart() {
     inquirer
         .prompt([
@@ -28,6 +29,7 @@ function gameStart() {
             quizArray.checkInput(input.guess);
             quizArray.returnCurrentString();
             correctCounter = 0;
+            wrongCounter = 0;
             for (var i = 0; i < quizArray.letterObject.length; i++) {
                 if (quizArray.letterObject[i].isGuessedCorrect == true) {
                     // this damn counter is for checking how many letters are correct
@@ -36,7 +38,8 @@ function gameStart() {
                         console.log("Congrats! You guessed ALL correct!")
                         isGamefinish = true;
                     }
-                }
+                } 
+                
             }
             if (!isGamefinish) {
                 gameStart();

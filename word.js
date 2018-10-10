@@ -21,7 +21,7 @@ function Word(chosenWord) {
         for (var i = 0; i < chosenWordArray.length; i++) {
             this.letterObject.push(new Letter(chosenWordArray[i]));
         };
-        console.log(this.letterObject);
+        // console.log(this.letterObject);
     };
     this.returnCurrentString = function () {
         displayCurrentArray = [];
